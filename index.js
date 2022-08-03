@@ -1,5 +1,6 @@
-const inquirer = require("inquirer")
-const fs = require("fs")
+var fs = require("fs")
+var inquirer = require("inquirer")
+
 
 
 
@@ -25,11 +26,10 @@ function manager() {
             name: "office",
             message: "What is the office number for the manager?",
             type: "input",
-        },
+        }
     ])
 };
 
-manager();
 
 function engineer() {
     inquirer.prompt([
@@ -55,8 +55,6 @@ function engineer() {
         },
     ])
 };
-
-engineer();
 
 
 function intern() {
@@ -84,9 +82,6 @@ function intern() {
     ])
 };
 
-intern();
-
-
 
 function newMember() {
     inquirer.prompt([
@@ -99,7 +94,6 @@ function newMember() {
     ])
 };
 
-newMember();
 
 
 // Ask what type of team member to be added or complete.
