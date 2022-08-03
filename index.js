@@ -1,9 +1,4 @@
-// require 'inquirer'
-// what is managers name,id,email,office number 
-// What team member do you want to add---drop down choices
-// engineer-name,id,email,github
-// intern- name,id,email,school
-
+const fs = require("fs");
 const inquirer = require("inquirer");
 
 const manager = inquirer.prompt([
@@ -76,23 +71,15 @@ const intern = inquirer.prompt([
     }
 ])
 
+const addTeam = inquirer.prompt([
+    {
+        name: "nextMember",
+        message: "Would you like to add another team member? If yes select new member.",
+        type: "list",
+        choices: ['Engineer', 'Intern'],
+    },
+])
 
-// Gather manager data
-    // inquirer.prompt
-    // build a manager object
-
-// Gather Engineer data
-    // inquirer.prompt
-    // build engineer object
-
-// Gather Intern data
-    // inquirer.prompt
-    // build intern object
-
-// ALL
-    // getId()
-    // getEmail()
-    // getRole
 
 // Ask what type of team member to be added or complete.
     // Loop back and add more team members
