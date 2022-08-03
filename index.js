@@ -1,6 +1,7 @@
 var fs = require("fs")
 var inquirer = require("inquirer")
 
+let answerArray = [""];
 
 
 function init() {
@@ -33,11 +34,13 @@ function manager() {
         }
     ])
         .then((answers) => {
-            console.log(answers)
-
+            answerArray.push(answers);
+            console.log(answerArray)
+            engineer();
 
         });
 };
+// The above function asks for the managers information and push's the answers into the empty answer array and then iniates the engineer function.
 
 
 function engineer() {
@@ -63,7 +66,13 @@ function engineer() {
             type: "input",
         },
     ])
-};
+        .then((answers) => {
+            answerArray.push(answers);
+            console.log(answerArray);
+            intern();
+        });
+}
+// The above function asks for the engineers information and push's the answers into the empty answer array and then iniates the intern function.
 
 
 function intern() {
@@ -89,7 +98,16 @@ function intern() {
             type: "input",
         }
     ])
+        .then((answers) => {
+            answerArray.push(answers);
+            console.log(answerArray);
+            newMember();
+
+        }
+
+        )
 };
+// The above function asks for the interns information and push's the answers into the empty answer array and then iniates the newMember function.
 
 
 function newMember() {
@@ -106,6 +124,12 @@ function newMember() {
 
 
 init();
+// Iniates the program.
+
+
+
+
+
 
 // Ask what type of team member to be added or complete.
     // Loop back and add more team members
@@ -116,4 +140,3 @@ init();
 // Generate HTML - Different Module
 // Write HTML to new file
 
-// Create an empty array list that holds our data somewhere in the global scope.
