@@ -8,6 +8,8 @@ function init() {
     manager();
 
 }
+// First function to fire off once user enters "node index.js" into there intergrated terminal.
+
 
 function manager() {
     inquirer.prompt([
@@ -114,9 +116,10 @@ function newMember() {
     inquirer.prompt([
         {
             name: "nextMember",
-            message: "Would you like to add another team member? If yes select new member.",
+            message: "Would you like to add another team member? If yes select new member. Otherwise select done to finish.",
             type: "list",
             choices: ['Engineer', 'Intern', 'Done'],
+            // Need to figure out how to use the users input to fire off the next function. Either another engineer or intern, or finishs and generates the html page.
         },
     ])
 };
