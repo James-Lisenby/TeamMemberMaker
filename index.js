@@ -1,0 +1,106 @@
+// require 'inquirer'
+// what is managers name,id,email,office number 
+// What team member do you want to add---drop down choices
+// engineer-name,id,email,github
+// intern- name,id,email,school
+
+const inquirer = require("inquirer");
+
+const manager = inquirer.prompt([
+    {
+        name: "managerName",
+        message: "What is the name of the manager for this project?",
+        type: "input",
+    },
+    {
+        name: "id",
+        message: "What is the managers ID #?",
+        type: "input",
+    },
+    {
+        name: "email",
+        message: "What is the managers email?",
+        type: "input",
+
+    },
+    {
+        name: "office",
+        message: "What is the office number for the manager?",
+        type: "input",
+    },
+])
+
+const engineer = inquirer.prompt([
+    {
+        name: "engineerName",
+        message: "What is the selected engineers name?",
+        type: "input",
+    },
+    {
+        name: "engineerId",
+        message: "What is the selected engineers id number?",
+        type: "input",
+    },
+    {
+        name: "engineerEmail",
+        message: "What is the email for the selected engineer?",
+        type: "input",
+    },
+    {
+        name: "engineerGithub",
+        message: "What is the github link for the selected engineer?",
+        type: "input",
+    },
+])
+
+const intern = inquirer.prompt([
+    {
+        name: "internName",
+        message: "What is the name of the selected intern?",
+        type: "input",
+    },
+    {
+        name: "internId",
+        message: "What is the selected interns Id #?",
+        type: "input",
+    },
+    {
+        name: "internEmail",
+        message: "What is the email of the selected intern?",
+        type: "input",
+    },
+    {
+        name: "internSchool",
+        message: "What is the name of the school the intern attends?",
+        type: "input",
+    }
+])
+
+
+// Gather manager data
+    // inquirer.prompt
+    // build a manager object
+
+// Gather Engineer data
+    // inquirer.prompt
+    // build engineer object
+
+// Gather Intern data
+    // inquirer.prompt
+    // build intern object
+
+// ALL
+    // getId()
+    // getEmail()
+    // getRole
+
+// Ask what type of team member to be added or complete.
+    // Loop back and add more team members
+    // or
+    // Be done selecting team
+
+
+// Generate HTML - Different Module
+// Write HTML to new file
+
+// Create an empty array list that holds our data somewhere in the global scope.
