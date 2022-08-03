@@ -3,6 +3,10 @@ var inquirer = require("inquirer")
 
 
 
+function init() {
+    manager();
+
+}
 
 function manager() {
     inquirer.prompt([
@@ -28,6 +32,11 @@ function manager() {
             type: "input",
         }
     ])
+        .then((answers) => {
+            console.log(answers)
+
+
+        });
 };
 
 
@@ -95,6 +104,8 @@ function newMember() {
 };
 
 
+
+init();
 
 // Ask what type of team member to be added or complete.
     // Loop back and add more team members
