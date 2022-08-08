@@ -123,6 +123,15 @@ function newMember() {
             // Need to figure out how to use the users input to fire off the next function. Either another engineer or intern, or finishs and generates the html page.
         },
     ])
+        .then((answers) => {
+            if (engineer === true) {
+                engineer();
+            } else if (intern === true);
+            else return;
+
+        }
+
+        )
 };
 
 
