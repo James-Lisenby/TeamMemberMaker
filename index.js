@@ -1,5 +1,6 @@
 var fs = require("fs")
 var inquirer = require("inquirer")
+var jest = require("jest")
 
 let answerArray = [""];
 
@@ -129,15 +130,6 @@ function newMember() {
 init();
 // Iniates the program.
 
-
-
-
-
-
-// Ask what type of team member to be added or complete.
-    // Loop back and add more team members
-    // or
-    // Be done selecting team
 
 
 // Generate HTML - Different Module
