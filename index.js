@@ -124,10 +124,8 @@ function newMember() {
         },
     ])
         .then((answers) => {
-            if (engineer = true)
-                engineer();
-            else if (intern = true)
-                intern();
+            if (engineer = true(engineer));
+            else if (intern = true(intern));
             else return
 
 
