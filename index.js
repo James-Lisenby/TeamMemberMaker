@@ -5,6 +5,10 @@ var jest = require("jest")
 let answerArray = [""];
 
 
+init();
+// Iniates the program.
+
+
 function init() {
     manager();
 
@@ -124,23 +128,9 @@ function newMember() {
         },
     ])
         .then((answers) => {
-            if (engineer = true(engineer));
-            else if (intern = true(intern));
-            else return
+            answerArray.push(answers);
+            console.log(answerArray);
 
+        });
 
-        }
-
-        )
-};
-
-
-
-init();
-// Iniates the program.
-
-
-
-// Generate HTML - Different Module
-// Write HTML to new file
-
+}
