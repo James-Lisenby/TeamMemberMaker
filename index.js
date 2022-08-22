@@ -1,6 +1,8 @@
-var fs = require("fs")
-var inquirer = require("inquirer")
-var jest = require("jest")
+var fs = require("fs");
+var inquirer = require("inquirer");
+const { default: ExpandPrompt } = require("inquirer/lib/prompts/expand");
+var jest = require("jest");
+const { createInflate } = require("zlib");
 
 let answerArray = [""];
 
@@ -125,12 +127,15 @@ function newMember() {
             type: "list",
             choices: ['Engineer', 'Intern', 'Done'],
             // Need to figure out how to use the users input to fire off the next function. Either another engineer or intern, or finishs and generates the html page.
-        },
+        }
+
     ])
-        .then((answers) => {
-            answerArray.push(answers);
-            console.log(answerArray);
 
-        });
-
-}
+    if (answers = 'Engineer') {
+        engineer();
+    } else if (answers = 'Intern') {
+        intern();
+    } else if (choicess = 'Done') {
+        createFile();
+    }
+};
