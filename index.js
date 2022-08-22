@@ -136,7 +136,7 @@ function newMember() {
             } else if (answers = 'Intern') {
                 intern();
             } else if (answers = 'Done') {
-                createFile();
+
             }
         })
 
