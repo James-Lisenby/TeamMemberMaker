@@ -130,12 +130,15 @@ function newMember() {
         }
 
     ])
+        .then((answers) => {
+            if (answers = 'Engineer') {
+                engineer();
+            } else if (answers = 'Intern') {
+                intern();
+            } else if (answers = 'Done') {
+                createFile();
+            }
+        })
 
-    if (answers = 'Engineer') {
-        engineer();
-    } else if (answers = 'Intern') {
-        intern();
-    } else if (choicess = 'Done') {
-        createFile();
-    }
+
 };
