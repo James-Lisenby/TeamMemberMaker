@@ -45,7 +45,7 @@ function manager() {
         .then((answers) => {
             answerArray.push(answers);
             console.log(answerArray)
-            engineer();
+            newMember();
 
         });
 };
@@ -78,7 +78,7 @@ function engineer() {
         .then((answers) => {
             answerArray.push(answers);
             console.log(answerArray);
-            intern();
+        newMember();
         });
 }
 // The above function asks for the engineers information and push's the answers into the empty answer array and then iniates the intern function.
@@ -131,11 +131,11 @@ function newMember() {
 
     ])
         .then((answers) => {
-            if (answers = 'Engineer') {
+            if (answers.nextMember === 'Engineer') {
                 engineer();
-            } else if (answers = 'Intern') {
+            } else if (answers.nextMember === 'Intern') {
                 intern();
-            } else if (answers = 'Done') {
+            } else if (answers.nextMember === 'Done') {
 
             }
         })
