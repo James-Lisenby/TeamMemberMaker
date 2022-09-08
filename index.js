@@ -3,8 +3,12 @@ var inquirer = require("inquirer");
 const { default: ExpandPrompt } = require("inquirer/lib/prompts/expand");
 var jest = require("jest");
 const { createInflate } = require("zlib");
-
-let answerArray = [""];
+const Employee = require('./lib/Employee');
+const Manager = require('./lib/Manager');
+const Engineer = require('./lib/Engineer');
+const Intern = require('./lib/Intern');
+let employeeArray = [""];
+const generateHTML = require("./src/htmltemplate.js");
 
 
 init();
@@ -43,10 +47,10 @@ function manager() {
         }
     ])
         .then((answers) => {
-            answerArray.push(answers);
-            console.log(answerArray)
+            const manager = new Manager(answers.managerName, answers.id, answers.email, answers.office);
+            employeeArray.push(manager);
+            console.log(employeeArray);
             newMember();
-
         });
 };
 // The above function asks for the managers information and push's the answers into the empty answer array and then iniates the engineer function.
@@ -76,8 +80,9 @@ function engineer() {
         },
     ])
         .then((answers) => {
-            answerArray.push(answers);
-            console.log(answerArray);
+            const engineer = new Engineer(answers.engineerName, answers.engineerId, answers.engineerEmail, answers.engineerGithub)
+            employeeArray.push(answers);
+            console.log(employeeArray);
         newMember();
         });
 }
@@ -108,8 +113,9 @@ function intern() {
         }
     ])
         .then((answers) => {
-            answerArray.push(answers);
-            console.log(answerArray);
+            const intern = new Intern(answers.internName, answers.internId, answers.internEmail, answers.internSchool)
+            employeeArray.push(answers);
+            console.log(employeeArray);
             newMember();
 
         }
@@ -136,9 +142,14 @@ function newMember() {
             } else if (answers.nextMember === 'Intern') {
                 intern();
             } else if (answers.nextMember === 'Done') {
+            renderHTML();
 
             }
         })
 
 
 };
+
+
+
+  
