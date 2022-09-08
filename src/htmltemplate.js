@@ -13,12 +13,12 @@ const generateHTML = (employeeArray) => {
         }
         
         const card = `
-            <div class="card col-md-3 m-2 bg-${employee.color} text-white">
+            <div class="card col-md-3 m-2 bg-${employee.color} text-black">
                 <div class="card-body">
                     
                     <h3 class="card-title py-2">${employee.name}</h3>
                     <ul class="list-group">
-                        <li class="list-group-item">${employee.id}</li>
+                        <li class="list-group-item">ID-${employee.id}</li>
                         <li class="list-group-item">${employee.email}</li>
                         <li class="list-group-item">${fourthDetail}</li>
                     </ul>
@@ -44,7 +44,7 @@ const generateHTML = (employeeArray) => {
             <div class="py-2 px-5 my-4 bg-light rounded-3">
                 <div class="container-fluid py-4">
                   <h1 class="display-5 fw-bold">Our Team</h1>
-                  <p class="col-md-8 fs-4">A well balanced team is a beautiful thing. Somewhere inbetween a well balanced composition and a well balanced wheel barrow load.</p>
+                  <p class="col-md-8 fs-4"> Team Work Makes The Dream Work.</p>
                 </div>
               </div>
             <div class="row">
