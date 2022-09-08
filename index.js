@@ -81,7 +81,7 @@ function engineer() {
     ])
         .then((answers) => {
             const engineer = new Engineer(answers.engineerName, answers.engineerId, answers.engineerEmail, answers.engineerGithub)
-            employeeArray.push(answers);
+            employeeArray.push(engineer);
             console.log(employeeArray);
         newMember();
         });
@@ -114,7 +114,7 @@ function intern() {
     ])
         .then((answers) => {
             const intern = new Intern(answers.internName, answers.internId, answers.internEmail, answers.internSchool)
-            employeeArray.push(answers);
+            employeeArray.push(intern);
             console.log(employeeArray);
             newMember();
 
@@ -132,7 +132,7 @@ function newMember() {
             message: "Would you like to add another team member? If yes select new member. Otherwise select done to finish.",
             type: "list",
             choices: ['Engineer', 'Intern', 'Done'],
-            // Need to figure out how to use the users input to fire off the next function. Either another engineer or intern, or finishs and generates the html page.
+            
         }
 
     ])
@@ -151,5 +151,7 @@ function newMember() {
 };
 
 
-
+renderHTML() {
+    // will append to the html once the team has been selected.
+}
   
