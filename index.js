@@ -46,8 +46,8 @@ function manager() {
             type: "input",
         }
     ])
-        .then((answers) => {
-            const manager = new Manager(answers.managerName, answers.id, answers.email, answers.office);
+        .then((answer) => {
+            const manager = new Manager(answer.managerName, answer.id, answer.email, answer.office);
             employeeArray.push(manager);
             console.log(employeeArray);
             newMember();
@@ -79,8 +79,8 @@ function engineer() {
             type: "input",
         },
     ])
-        .then((answers) => {
-            const engineer = new Engineer(answers.engineerName, answers.engineerId, answers.engineerEmail, answers.engineerGithub)
+        .then((answer) => {
+            const engineer = new Engineer(answer.engineerName, answer.engineerId, answer.engineerEmail, answer.engineerGithub)
             employeeArray.push(engineer);
             console.log(employeeArray);
         newMember();
@@ -112,8 +112,8 @@ function intern() {
             type: "input",
         }
     ])
-        .then((answers) => {
-            const intern = new Intern(answers.internName, answers.internId, answers.internEmail, answers.internSchool)
+        .then((answer) => {
+            const intern = new Intern(answer.internName, answer.internId, answer.internEmail, answer.internSchool)
             employeeArray.push(intern);
             console.log(employeeArray);
             newMember();
@@ -136,12 +136,12 @@ function newMember() {
         }
 
     ])
-        .then((answers) => {
-            if (answers.nextMember === 'Engineer') {
+        .then((answer) => {
+            if (answer.nextMember === 'Engineer') {
                 engineer();
-            } else if (answers.nextMember === 'Intern') {
+            } else if (answer.nextMember === 'Intern') {
                 intern();
-            } else if (answers.nextMember === 'Done') {
+            } else if (answer.nextMember === 'Done') {
             renderHTML();
 
             }
@@ -151,7 +151,9 @@ function newMember() {
 };
 
 
-renderHTML() {
-    // will append to the html once the team has been selected.
-}
+const renderHTML = () => {
+    const templateHTML = generateHTML(employeeArray);
+    fs.writeFile("index.html", templateHTML, (err) => 
+    err ? console.log(err) : console.log('Success! index.HTML has been created'))
+  };
   
